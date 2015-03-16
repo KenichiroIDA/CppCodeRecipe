@@ -7,6 +7,7 @@ C++コードレシピ
     :maxdepth: 2
 
     io
+    file
     string
     container
     iteration
