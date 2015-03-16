@@ -39,6 +39,9 @@ Boost利用
 数値を文字列に変換したい
 ========================
 
+C++11
+-----
+
 .. code-block:: cpp
     :linenos:
 
@@ -50,8 +53,30 @@ Boost利用
         const std::string& s = std::to_string(v);
     }
 
+C++11以前
+---------
+
+.. code-block:: cpp
+    :linenos:
+
+    #include <sstream>
+    #include <string>
+
+    int main() {
+        int v = 10;
+
+        std::ostringstream strout;
+
+        strout << v;
+
+        // s == "10"
+        const std::string& s = strout.str();
+
+        return 0;
+    }
+
 文字コードを変換したい
-----------------------
+======================
 
 標準ライブラリではできないので、Boostを使用する。
 

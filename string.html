@@ -32,7 +32,7 @@
   
     <link rel="top" title="C++ Code Recipe 1.0 ドキュメント" href="index.html"/>
         <link rel="next" title="コンテナ" href="container.html"/>
-        <link rel="prev" title="入出力" href="io.html"/> 
+        <link rel="prev" title="ファイル・パス操作" href="file.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -73,9 +73,15 @@
 <li class="toctree-l2"><a class="reference internal" href="io.html#id7">メッセージを整形して出力したい</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="file.html">ファイル・パス操作</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file.html#id2">ファイルが存在するかどうかを調べたい</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file.html#id3">ファイル名から拡張子を取り出したい</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">文字列</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">文字列を数値に変換したい</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id4">数値を文字列に変換したい</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">文字コードを変換したい</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="container.html">コンテナ</a><ul>
@@ -124,19 +130,20 @@
           <div role="main" class="document">
             
   <div class="section" id="id1">
-<h1><a class="toc-backref" href="#id6">文字列</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<h1><a class="toc-backref" href="#id7">文字列</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="contents topic" id="contents">
 <p class="topic-title first">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#id1" id="id6">文字列</a><ul>
-<li><a class="reference internal" href="#id2" id="id7">文字列を数値に変換したい</a></li>
-<li><a class="reference internal" href="#id4" id="id8">数値を文字列に変換したい</a></li>
+<li><a class="reference internal" href="#id1" id="id7">文字列</a><ul>
+<li><a class="reference internal" href="#id2" id="id8">文字列を数値に変換したい</a></li>
+<li><a class="reference internal" href="#id4" id="id9">数値を文字列に変換したい</a></li>
+<li><a class="reference internal" href="#id6" id="id10">文字コードを変換したい</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="id2">
-<h2><a class="toc-backref" href="#id7">文字列を数値に変換したい</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">文字列を数値に変換したい</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="section" id="id3">
 <h3>標準ライブラリ利用<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -177,7 +184,9 @@
 </div>
 </div>
 <div class="section" id="id4">
-<h2><a class="toc-backref" href="#id8">数値を文字列に変換したい</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">数値を文字列に変換したい</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="c-11">
+<h3>C++11<a class="headerlink" href="#c-11" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -193,8 +202,44 @@
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
+</div>
 <div class="section" id="id5">
-<h3>文字コードを変換したい<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>C++11以前<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include &lt;sstream&gt;</span>
+<span class="cp">#include &lt;string&gt;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">ostringstream</span> <span class="n">strout</span><span class="p">;</span>
+
+    <span class="n">strout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="p">;</span>
+
+    <span class="c1">// s == &quot;10&quot;</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">strout</span><span class="p">.</span><span class="n">str</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2><a class="toc-backref" href="#id10">文字コードを変換したい</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>標準ライブラリではできないので、Boostを使用する。</p>
 <p>依存関係</p>
 <ul class="simple">
@@ -230,7 +275,6 @@
 <p>UTF &lt;-&gt; その他間での変換しかできないのである文字コードから別のある文字コードに変換する時は一旦UTF-8を経由する必要がある。</p>
 </div>
 </div>
-</div>
 
 
           </div>
@@ -241,7 +285,7 @@
         <a href="container.html" class="btn btn-neutral float-right" title="コンテナ">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="io.html" class="btn btn-neutral" title="入出力"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="file.html" class="btn btn-neutral" title="ファイル・パス操作"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

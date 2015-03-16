@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>C++コードレシピ &mdash; C++ Code Recipe 1.0 ドキュメント</title>
+  <title>ファイル・パス操作 &mdash; C++ Code Recipe 1.0 ドキュメント</title>
   
 
   
@@ -30,8 +30,9 @@
   
 
   
-    <link rel="top" title="C++ Code Recipe 1.0 ドキュメント" href="#"/>
-        <link rel="next" title="入出力" href="io.html"/> 
+    <link rel="top" title="C++ Code Recipe 1.0 ドキュメント" href="index.html"/>
+        <link rel="next" title="文字列" href="string.html"/>
+        <link rel="prev" title="入出力" href="io.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -46,7 +47,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
         
-          <a href="#" class="fa fa-home"> C++ Code Recipe</a>
+          <a href="index.html" class="fa fa-home"> C++ Code Recipe</a>
         
         
 <div role="search">
@@ -62,7 +63,7 @@
         
           
           
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="io.html">入出力</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="io.html#id2">標準出力にメッセージを出力したい</a></li>
 <li class="toctree-l2"><a class="reference internal" href="io.html#id3">ファイルにメッセージを出力したい</a></li>
@@ -72,9 +73,9 @@
 <li class="toctree-l2"><a class="reference internal" href="io.html#id7">メッセージを整形して出力したい</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="file.html">ファイル・パス操作</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="file.html#id2">ファイルが存在するかどうかを調べたい</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file.html#id3">ファイル名から拡張子を取り出したい</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">ファイル・パス操作</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">ファイルが存在するかどうかを調べたい</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">ファイル名から拡張子を取り出したい</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="string.html">文字列</a><ul>
@@ -106,7 +107,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="#">C++ Code Recipe</a>
+        <a href="index.html">C++ Code Recipe</a>
       </nav>
 
 
@@ -115,12 +116,12 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="#">Docs</a> &raquo;</li>
+    <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>C++コードレシピ</li>
+    <li>ファイル・パス操作</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="_sources/index.txt" rel="nofollow"> View page source</a>
+          <a href="_sources/file.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -128,42 +129,64 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="c">
-<h1>C++コードレシピ<a class="headerlink" href="#c" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>面倒くさがりなプログラマが、楽をするためにまとめたC++レシピ集です。</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="io.html">入出力</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="io.html#id2">標準出力にメッセージを出力したい</a></li>
-<li class="toctree-l2"><a class="reference internal" href="io.html#id3">ファイルにメッセージを出力したい</a></li>
-<li class="toctree-l2"><a class="reference internal" href="io.html#id4">ファイルからテキストを1行ずつ読み込みたい</a></li>
-<li class="toctree-l2"><a class="reference internal" href="io.html#id5">ファイルからデータを1つずつ読み込みたい</a></li>
-<li class="toctree-l2"><a class="reference internal" href="io.html#id6">ファイルサイズを取得したい</a></li>
-<li class="toctree-l2"><a class="reference internal" href="io.html#id7">メッセージを整形して出力したい</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="file.html">ファイル・パス操作</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="file.html#id2">ファイルが存在するかどうかを調べたい</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file.html#id3">ファイル名から拡張子を取り出したい</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="string.html">文字列</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="string.html#id2">文字列を数値に変換したい</a></li>
-<li class="toctree-l2"><a class="reference internal" href="string.html#id4">数値を文字列に変換したい</a></li>
-<li class="toctree-l2"><a class="reference internal" href="string.html#id6">文字コードを変換したい</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="container.html">コンテナ</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="container.html#std-vector">std::vectorに複数要素を楽に追加したい</a></li>
-<li class="toctree-l2"><a class="reference internal" href="container.html#std-map">std::mapより速い連想配列を使いたい</a></li>
-<li class="toctree-l2"><a class="reference internal" href="container.html#id3">構造体をハッシュテーブルのキーにしたい</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="iteration.html">イテレート</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="iteration.html#id2">独自のイテレータを作りたい</a></li>
+  <div class="section" id="id1">
+<h1><a class="toc-backref" href="#id4">ファイル・パス操作</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id1" id="id4">ファイル・パス操作</a><ul>
+<li><a class="reference internal" href="#id2" id="id5">ファイルが存在するかどうかを調べたい</a></li>
+<li><a class="reference internal" href="#id3" id="id6">ファイル名から拡張子を取り出したい</a></li>
 </ul>
 </li>
 </ul>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id5">ファイルが存在するかどうかを調べたい</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>標準ライブラリではできないのでBoostを使用する。</p>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include &lt;boost/filesystem.hpp&gt;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">boost</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">exists</span><span class="p">(</span><span class="s">&quot;file.txt&quot;</span><span class="p">))</span> <span class="p">{</span>
+        <span class="c1">// file.txtが存在する</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id6">ファイル名から拡張子を取り出したい</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include &lt;string&gt;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">filename</span> <span class="o">=</span> <span class="s">&quot;file.txt&quot;</span><span class="p">;</span>
+
+    <span class="c1">// ext == &quot;.txt&quot;</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">ext</span> <span class="o">=</span> <span class="n">filename</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">filename</span><span class="p">.</span><span class="n">rfind</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">));</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
 </div>
 </div>
 
@@ -173,8 +196,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="io.html" class="btn btn-neutral float-right" title="入出力">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="string.html" class="btn btn-neutral float-right" title="文字列">Next <span class="fa fa-arrow-circle-right"></span></a>
       
+      
+        <a href="io.html" class="btn btn-neutral" title="入出力"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
